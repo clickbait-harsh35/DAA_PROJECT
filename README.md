@@ -1,15 +1,229 @@
-# DAA_PROJECT
-ALGORITHMIC FRAMEWORK FOR REVENUE MAXIMIZATION IN DIGITAL ADVERTISEMENT SLOT ALLOCATION
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Ad Slot Optimization</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            background: #f9f9f9;
+            color: #333;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        code {
+            background: #eee;
+            padding: 4px 6px;
+            border-radius: 5px;
+        }
+        pre {
+            background: #272822;
+            color: #f8f8f2;
+            padding: 15px;
+            overflow-x: auto;
+            border-radius: 8px;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        }
+        ul {
+            margin-left: 20px;
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        .badge {
+            display: inline-block;
+            padding: 5px 10px;
+            background: #3498db;
+            color: white;
+            border-radius: 5px;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
 
+<div class="container">
 
----
+<h1>🚀 Smart Digital Advertisement Slot Optimization System</h1>
 
-1. INTRODUCTION
+<p>
+A system that optimizes advertisement selection and scheduling using 
+<strong>Sorting Algorithms, Greedy Strategy, and Dynamic Programming</strong> 
+to maximize revenue under constraints.
+</p>
 
-In the modern digital era, websites, mobile applications, blogs, streaming services, and online platforms generate a significant portion of their income through digital advertisements. Every day, numerous advertisers submit requests to display their advertisements on these platforms. However, the advertisement display area on a webpage is limited, and not every advertisement can be accommodated simultaneously.
+<hr>
 
-This creates an optimization problem where the platform must intelligently decide which advertisements should be displayed, in what order they should be placed, and how the available ad space should be utilized to maximize total revenue while satisfying advertiser deadlines.
+<div class="section">
+<h2>📌 Problem Statement</h2>
+<p>
+Digital platforms receive multiple ads with different bids, deadlines, and sizes.
+Since space is limited, selecting the best combination of ads becomes an optimization problem.
+</p>
+<ul>
+<li>Which ads to prioritize?</li>
+<li>Which ads meet deadlines?</li>
+<li>Which combination gives maximum revenue?</li>
+</ul>
+</div>
 
+<div class="section">
+<h2>🎯 Objectives</h2>
+<ul>
+<li>Efficient ad management system</li>
+<li>Prioritization using sorting</li>
+<li>Greedy scheduling</li>
+<li>Revenue maximization using Knapsack</li>
+<li>Performance comparison</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>🧠 Algorithms Used</h2>
+
+<h3>Sorting</h3>
+<ul>
+<li>Merge Sort (Deadline based)</li>
+<li>Quick Sort (Bid based)</li>
+<li>Heap Sort (Priority queue)</li>
+</ul>
+
+<h3>Greedy</h3>
+<ul>
+<li>Job Sequencing with Deadlines</li>
+</ul>
+
+<h3>Dynamic Programming</h3>
+<ul>
+<li>0/1 Knapsack</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>⚙️ System Workflow</h2>
+<pre>
+Input Ads → Sorting → Greedy Scheduling → Knapsack Optimization → Output Results
+</pre>
+</div>
+
+<div class="section">
+<h2>💻 Tech Stack</h2>
+<ul>
+<li><span class="badge">Python 3</span></li>
+<li><span class="badge">PrettyTable</span></li>
+<li><span class="badge">VS Code</span></li>
+<li><span class="badge">Linux / Windows</span></li>
+</ul>
+</div>
+
+<div class="section">
+<h2>🧪 Sample Code</h2>
+
+<h3>Advertisement Class</h3>
+<pre>
+class Advertisement:
+    def __init__(self, ad_id, bid, deadline, size, ctr):
+        self.ad_id = ad_id
+        self.bid = bid
+        self.deadline = deadline
+        self.size = size
+        self.ctr = ctr
+</pre>
+
+<h3>Quick Sort</h3>
+<pre>
+def quick_sort(arr):
+    if len(arr) <= 1:
+        return arr
+    pivot = arr[0]
+    greater = [x for x in arr[1:] if x.bid > pivot.bid]
+    lesser = [x for x in arr[1:] if x.bid <= pivot.bid]
+    return quick_sort(greater) + [pivot] + quick_sort(lesser)
+</pre>
+
+<h3>Knapsack</h3>
+<pre>
+def knapsack(ads, capacity):
+    n = len(ads)
+    dp = [[0]*(capacity+1) for _ in range(n+1)]
+</pre>
+
+</div>
+
+<div class="section">
+<h2>📊 Results</h2>
+<ul>
+<li>Improved ad prioritization</li>
+<li>Higher revenue using DP</li>
+<li>Efficient scheduling</li>
+</ul>
+<p><strong>Insight:</strong> Knapsack gives maximum optimal revenue.</p>
+</div>
+
+<div class="section">
+<h2>✅ Advantages</h2>
+<ul>
+<li>Automated system</li>
+<li>Maximized revenue</li>
+<li>Efficient space usage</li>
+<li>Scalable</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>⚠️ Limitations</h2>
+<ul>
+<li>Static data</li>
+<li>No ML integration</li>
+<li>No real-time analytics</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>🔮 Future Scope</h2>
+<ul>
+<li>AI-based prediction</li>
+<li>Cloud deployment</li>
+<li>GUI system</li>
+<li>Database integration</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>🏁 Conclusion</h2>
+<p>
+This project demonstrates how algorithmic techniques can solve real-world ad allocation problems efficiently and profitably.
+</p>
+</div>
+
+<div class="section">
+<h2>📚 References</h2>
+<ul>
+<li>Introduction to Algorithms – CLRS</li>
+<li>Design and Analysis of Algorithms</li>
+<li>Python Documentation</li>
+</ul>
+</div>
+
+<hr>
+
+<p><strong>👨‍💻 Author:</strong> Your Name</p>
+
+</div>
+
+</body>
+</html>
 Manual allocation of advertisements is inefficient, time-consuming, and often leads to revenue loss. Therefore, an algorithmic solution is required to automate the prioritization, scheduling, and optimal selection of advertisements.
 
 This project proposes a Smart Digital Advertisement Slot Optimization System that integrates multiple Design and Analysis of Algorithms concepts such as Sorting Algorithms, Greedy Algorithms, and Dynamic Programming to perform efficient ad ranking and allocation.
